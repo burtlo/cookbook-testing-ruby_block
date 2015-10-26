@@ -7,7 +7,7 @@
 
 ruby_block "Add rbenv to PATH" do
   block do
-    rbenv_root = node['rbenv']['root_path']
+    add_rbenv_to_path(node['rbenv']['root_path'])
     ENV['PATH'] = "#{rbenv_root}/shims:#{rbenv_root}/bin:#{ENV['PATH']}"
   end
 end
